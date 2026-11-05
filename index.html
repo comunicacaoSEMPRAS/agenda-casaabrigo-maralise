@@ -2,7 +2,33 @@
 <style>
 :root{font-family:Arial,Helvetica,sans-serif;color:#1e304b;background:#f3f7fc}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{display:flex;min-height:100vh}.side{background:#163f78;color:white;width:245px;padding:28px 15px;flex-shrink:0}.side strong{font-size:19px;line-height:1.35}.side small{display:block;color:#cbdcf3;margin:10px 0 26px}.side button{display:block;width:100%;padding:12px;border:0;border-radius:8px;text-align:left;background:transparent;color:#fff;margin:5px 0}.side button.active,.side button:hover{background:#3470bd}.main{flex:1;padding:25px;min-width:0;max-width:1500px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.eyebrow{color:#3666a1;font-size:12px;text-transform:uppercase;font-weight:bold;letter-spacing:1px}h1{font-size:25px;margin:5px 0 4px}.muted{font-size:12px;color:#62758d}.actions{display:flex;gap:9px;flex-wrap:wrap}button.primary,.secondary,.danger{border:0;border-radius:9px;padding:11px 13px;font-weight:600}.primary{background:#2464a9;color:white}.secondary{background:white;color:#204c81;border:1px solid #d3deeb}.danger{background:#b23b43;color:white}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:20px 0}.card,.panel{background:white;border:1px solid #dee7f1;border-radius:13px;padding:19px;box-shadow:0 3px 13px #0a2a5610}.card b{display:block;font-size:26px;color:#1c5798;margin:8px 0}.card span{font-size:12px;color:#62758d}.panel{margin:19px 0}.panel h2{font-size:17px;margin:0 0 13px}.filters{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:15px}.filters input,.filters select{padding:10px;border:1px solid #cad8e9;border-radius:7px;max-width:100%}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:900px}td,th{padding:11px;text-align:left;border-bottom:1px solid #e7edf5;font-size:12px;vertical-align:top}th{background:#edf4fc;color:#305d8f;font-size:11px;text-transform:uppercase}.pill{background:#e7f0fc;color:#245c9c;border-radius:20px;padding:5px 8px;font-size:11px}.pill.Realizada{background:#e2f5e9;color:#27764a}.pill.Cancelada{background:#ffebea;color:#a23d3d}.link{border:0;background:none;color:#1763af;font-weight:bold;padding:5px}.hide{display:none!important}.days{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.day{background:#f7fbff;border:1px solid #dae6f4;border-radius:9px;padding:12px;min-height:130px}.day b{font-size:12px}.event{background:#e7f0ff;border-left:3px solid #2673bd;font-size:11px;margin:9px 0;padding:9px;border-radius:5px;line-height:1.5}.event strong{display:block}dialog{border:0;border-radius:13px;width:min(720px,96vw);max-height:94vh;padding:0;box-shadow:0 15px 55px #193b6666}dialog::backdrop{background:#10294a99}.dialoghead{background:#edf4ff;padding:18px 22px;display:flex;justify-content:space-between;align-items:center}.dialoghead h2{margin:0}.dialogbody{padding:20px 22px;overflow:auto;max-height:calc(94vh - 68px)}.fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:bold;color:#456284}.field input,.field select,.field textarea{padding:11px;border:1px solid #cad8e9;border-radius:8px;width:100%;background:white}.field textarea{resize:vertical;min-height:75px}.foot{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}.notice{border-left:4px solid #d6a03a;background:#fffae8;padding:12px 15px;font-size:12px;line-height:1.6}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}.photo{border:1px solid #dbe6f3;border-radius:10px;padding:10px}.photo img{width:100%;height:130px;object-fit:cover;border-radius:7px;background:#ecf2fa}.photo button{margin-top:8px}.reportheader{text-align:center;color:#173d75;border-bottom:3px solid #2a6bb2;padding:10px}.reportfooter{font-size:10px;text-align:center;border-top:1px solid #bed0e6;margin-top:20px;padding:10px}#toast{position:fixed;bottom:15px;right:15px;max-width:340px;padding:12px 16px;background:#193d71;color:white;border-radius:9px;display:none;z-index:10;font-size:13px}#toast.error{background:#a72d3d}@media(max-width:950px){.side{width:190px}.cards{grid-template-columns:repeat(2,1fr)}.days{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.shell{display:block}.side{width:100%;padding:12px}.side small{margin:3px 0}.side nav{display:flex;overflow:auto}.side button{white-space:nowrap;width:auto}.main{padding:12px}.days{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.field.full{grid-column:1}.cards{gap:8px}.card{padding:11px}}
 </style></head><body>
-<div id="authScreen" style="min-height:100vh;display:grid;place-items:center;padding:20px;background:#eaf1fb"><div style="background:white;padding:28px;border-radius:16px;width:100%;max-width:410px;box-shadow:0 12px 35px #193c7430"><h2 style="color:#163f78">Agenda Casa Abrigo Maralise</h2><p id="authTitle">Entrar na agenda compartilhada</p><form id="authForm" style="display:grid;gap:12px"><input id="authName" class="hide" placeholder="Nome completo" maxlength="90"><input id="authEmail" type="email" placeholder="E-mail" autocomplete="username" required><input id="authPassword" type="password" placeholder="Senha" autocomplete="current-password" minlength="12" required><button class="primary" id="authSubmit" type="submit">Entrar</button></form><button id="authToggle" class="secondary" style="margin-top:12px;width:100%">Criar minha conta</button><button id="resendBtn" type="button" class="link" style="margin-top:10px">Reenviar e-mail de confirmação</button><p id="authError" role="status" aria-live="polite" style="color:#b91c1c;font-size:13px"></p><p style="font-size:11px;color:#64748b">Somente informações administrativas não sigilosas devem ser cadastradas.</p></div></div>
+<div id="authScreen" style="min-height:100vh;display:grid;place-items:center;padding:20px;background:#eaf1fb">
+  <div style="background:white;padding:28px;border-radius:16px;width:100%;max-width:410px;box-shadow:0 12px 35px #193c7430">
+    <h2 style="color:#163f78">Agenda Casa Abrigo Maralise</h2>
+    <div id="authFormView">
+      <p id="authTitle">Entrar na agenda compartilhada</p>
+      <form id="authForm" style="display:grid;gap:12px">
+        <input id="authName" class="hide" type="text" placeholder="Nome completo" maxlength="90" autocomplete="name">
+        <input id="authEmail" type="email" placeholder="E-mail" autocomplete="username" required>
+        <input id="authPassword" type="password" placeholder="Senha" autocomplete="current-password" minlength="12" required>
+        <input id="authPasswordConfirm" class="hide" type="password" placeholder="Confirme sua senha" autocomplete="new-password" minlength="12">
+        <button class="primary" id="authSubmit" type="submit">Entrar</button>
+      </form>
+      <button id="authToggle" class="secondary" style="margin-top:12px;width:100%">Criar minha conta</button>
+      <p id="authError" role="status" aria-live="polite" style="color:#b91c1c;font-size:13px"></p>
+    </div>
+    <div id="verificationView" class="hide">
+      <div id="verificationIcon" style="font-size:32px;color:#2464a9" aria-hidden="true">✉</div>
+      <h3 id="verificationTitle" style="color:#163f78;margin-bottom:8px">Confirme seu e-mail</h3>
+      <p id="verificationDescription" style="font-size:14px;line-height:1.6">Enviamos um link de confirmação para <strong id="verificationEmail"></strong>. Verifique também a pasta de spam.</p>
+      <p style="font-size:13px;line-height:1.6">O link é válido por <strong>24 horas</strong>. Sua conta só será ativada após a confirmação.</p>
+      <button id="resendBtn" type="button" class="secondary" style="width:100%;margin-top:8px" disabled>Reenviar e-mail (40s)</button>
+      <p id="verificationStatus" role="status" aria-live="polite" style="font-size:13px;color:#20517f"></p>
+      <button id="backToLogin" type="button" class="link" style="margin-top:10px">Voltar para entrar</button>
+    </div>
+    <p style="font-size:11px;color:#64748b;margin-top:18px">Somente informações administrativas não sigilosas devem ser cadastradas.</p>
+  </div>
+</div>
 <div class="shell hide" id="appShell"><aside class="side"><strong>Casa Abrigo<br>MARALISE</strong><small>Farias Pinto Pacheco<br>Rondonópolis – MT</small><nav><button class="active" data-view="dashboard">▦ Visão geral</button><button data-view="agenda">▤ Agenda semanal</button><button data-view="historico">◷ Histórico de visitas</button><button data-view="atividades">◇ Atividades externas</button><button data-view="relatorios">▣ Relatórios mensais</button><button id="adminNav" class="hide" data-view="administracao">♜ Administração</button><button data-view="orientacoes">ⓘ Orientações</button></nav></aside>
 <main class="main"><div class="top"><div><div class="eyebrow">Agenda compartilhada • Acesso institucional</div><h1 id="title">Painel de acompanhamento</h1><div class="muted">Conta: <span id="currentUser"></span> • Atualização a cada 60 segundos</div></div><div class="actions"><button class="secondary" id="logoutBtn">Sair</button><button class="secondary" id="refresh">↻ Atualizar</button><button class="primary" id="newBtn">+ Novo agendamento</button></div></div>
 <section id="dashboard"><div class="cards"><div class="card"><span>Total de registros</span><b id="statTotal">—</b></div><div class="card"><span>Visitas previstas</span><b id="statPrev">—</b></div><div class="card"><span>Visitas realizadas</span><b id="statDone">—</b></div><div class="card"><span>Atividades externas</span><b id="statExt">—</b></div></div><div class="panel"><h2>Programação desta semana</h2><div id="weekGrid" class="days"></div></div><div class="panel"><h2>Próximos agendamentos</h2><div class="tablewrap" id="nextTable"></div></div></section>
@@ -20,7 +46,7 @@
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\"':'&quot;'}[c]));
-let records=[], photos=[], view='dashboard', activePhotoRecord='', loading=false;let week='';let sessionToken=sessionStorage.getItem('abrigo_session')||'',activeUser=null,registerMode=false;
+let records=[], photos=[], view='dashboard', activePhotoRecord='', loading=false;let week='';let sessionToken=sessionStorage.getItem('abrigo_session')||'',activeUser=null,registerMode=false,verificationEmail='',resendTimer=null,resendEndsAt=0;
 const today=()=>{let d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
 const parse=s=>new Date(s+'T12:00:00');const iso=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
 const plus=(d,n)=>{let x=parse(d);x.setDate(x.getDate()+n);return iso(x)};const monday=d=>plus(d,-((parse(d).getDay()+6)%7));const fmt=d=>d?parse(d).toLocaleDateString('pt-BR'):'';const sorted=a=>[...a].sort((x,y)=>(x.data+x.inicio).localeCompare(y.data+y.inicio));
@@ -65,37 +91,95 @@ function rawRpc(name,...args){
   });
 }
 function rpc(name,...args){if(!sessionToken)throw Error('Faça login.');return rawRpc(name,sessionToken,...args)}
-function setAuth(mode){registerMode=mode;$('authTitle').textContent=mode?'Criar conta na agenda':'Entrar na agenda compartilhada';$('authName').classList.toggle('hide',!mode);$('authName').required=mode;$('authSubmit').textContent=mode?'Cadastrar':'Entrar';$('authToggle').textContent=mode?'Já tenho conta — Entrar':'Criar minha conta';$('authError').textContent='';}
+function setAuth(mode){
+  registerMode=mode;
+  $('authFormView').classList.remove('hide');$('verificationView').classList.add('hide');
+  $('authTitle').textContent=mode?'Criar conta na agenda':'Entrar na agenda compartilhada';
+  $('authName').classList.toggle('hide',!mode);$('authName').required=mode;
+  $('authPasswordConfirm').classList.toggle('hide',!mode);$('authPasswordConfirm').required=mode;
+  $('authPassword').autocomplete=mode?'new-password':'current-password';
+  $('authSubmit').textContent=mode?'Cadastrar':'Entrar';
+  $('authToggle').textContent=mode?'Já tenho conta — Entrar':'Criar minha conta';
+  $('authError').textContent='';
+}
+function stopResendCountdown(){if(resendTimer!==null){clearInterval(resendTimer);resendTimer=null;}}
+function startResendCountdown(seconds=40){
+  stopResendCountdown();resendEndsAt=Date.now()+seconds*1000;
+  const update=()=>{
+    const remaining=Math.max(0,Math.ceil((resendEndsAt-Date.now())/1000));
+    $('resendBtn').disabled=remaining>0;
+    $('resendBtn').textContent=remaining>0?'Reenviar e-mail ('+remaining+'s)':'Reenviar e-mail de confirmação';
+    if(!remaining)stopResendCountdown();
+  };
+  update();if(resendEndsAt>Date.now())resendTimer=setInterval(update,250);
+}
+function showVerificationSent(email,waitSeconds=40,description=''){
+  verificationEmail=String(email||'').trim().toLowerCase();
+  $('authFormView').classList.add('hide');$('verificationView').classList.remove('hide');
+  $('verificationTitle').textContent='Verifique sua caixa de entrada';
+  $('verificationIcon').textContent='✉';
+  $('verificationDescription').textContent='';
+  $('verificationDescription').append('Enviamos um link de confirmação para ');
+  const strong=document.createElement('strong');strong.textContent=verificationEmail;
+  $('verificationDescription').append(strong,'. Verifique também a pasta de spam.');
+  $('verificationStatus').style.color='#20517f';
+  $('verificationStatus').textContent=description;
+  $('resendBtn').classList.remove('hide');
+  startResendCountdown(waitSeconds);
+}
+function showVerificationResult(success,message){
+  stopResendCountdown();
+  $('authFormView').classList.add('hide');$('verificationView').classList.remove('hide');
+  $('verificationTitle').textContent=success?'E-mail confirmado!':'Não foi possível confirmar';
+  $('verificationIcon').textContent=success?'✓':'!';
+  $('verificationDescription').textContent=message;
+  $('verificationStatus').textContent=success?'Sua conta está pronta para entrar.':'Se seu link expirou, volte ao cadastro para solicitar ajuda à administração.';
+  $('resendBtn').classList.add('hide');
+}
 function enterApp(user){activeUser=user;$('authScreen').classList.add('hide');$('appShell').classList.remove('hide');$('currentUser').textContent=user.nome+' ('+user.email+')';$('adminNav').classList.toggle('hide',user.papel!=='admin');if(user.papel==='admin')loadUsers();reload(true);}
 function exitApp(){sessionToken='';activeUser=null;sessionStorage.removeItem('abrigo_session');$('authScreen').classList.remove('hide');$('appShell').classList.add('hide');records=[];photos=[];}
 async function loadUsers(){if(!activeUser||activeUser.papel!=='admin')return;try{let users=await rpc('adminListUsers');$('usersTable').innerHTML='<table><thead><tr><th>Nome</th><th>E-mail</th><th>Papel</th><th>Situação</th><th>Ação</th></tr></thead><tbody>'+users.map(u=>'<tr><td>'+esc(u.nome)+'</td><td>'+esc(u.email)+'</td><td>'+esc(u.papel)+'</td><td>'+esc(u.estado)+'</td><td>'+(u.papel==='admin'?'Administradora':('<button class="secondary" data-userid="'+esc(u.id)+'" data-setstatus="'+(u.estado==='ativo'?'banido':'ativo')+'">'+(u.estado==='ativo'?'Banir':'Reativar')+'</button>'))+'</td></tr>').join('')+'</tbody></table>';}catch(e){notice(e.message,true)}}
 $('authToggle').onclick=()=>setAuth(!registerMode);
 $('resendBtn').onclick=async()=>{
-  const email=$('authEmail').value.trim();
-  if(!email){$('authError').style.color='#b91c1c';$('authError').textContent='Digite seu e-mail para reenviar a confirmação.';return;}
-  $('resendBtn').disabled=true;
+  if($('resendBtn').disabled || !verificationEmail)return;
+  // Bloqueio no navegador, com bloqueio independente no Apps Script.
+  startResendCountdown(40);
+  $('verificationStatus').style.color='#20517f';$('verificationStatus').textContent='Solicitando novo link...';
   try{
-    const data=await rawRpc('resendVerification',email);
-    $('authError').style.color='#166534';$('authError').textContent=data.message;
-  }catch(err){$('authError').style.color='#b91c1c';$('authError').textContent=err.message;}
-  finally{$('resendBtn').disabled=false;}
+    const data=await rawRpc('resendVerification',verificationEmail);
+    $('verificationStatus').style.color='#166534';
+    $('verificationStatus').textContent=data.message+' Confira sua caixa de entrada e o spam.';
+  }catch(err){
+    $('verificationStatus').style.color='#b91c1c';$('verificationStatus').textContent=err.message;
+  }
 };
+$('backToLogin').onclick=()=>{stopResendCountdown();setAuth(false);$('authPassword').value='';$('authPasswordConfirm').value='';};
 async function processEmailConfirmation(){
   const params=new URLSearchParams(location.search),token=params.get('confirm');
   if(!token)return;
-  // Remove token da barra de endereço antes de chamar o backend.
   try{history.replaceState({},'',location.pathname+location.hash)}catch(_){}
   exitApp();setAuth(false);
-  $('authError').style.color='#204c81';$('authError').textContent='Confirmando seu e-mail…';
-  $('authSubmit').disabled=true;
-  try{
-    const data=await rawRpc('confirmEmail',token);
-    $('authError').style.color='#166534';$('authError').textContent=data.message;
-  }catch(err){$('authError').style.color='#b91c1c';$('authError').textContent=err.message+' Você pode solicitar outro link abaixo.';}
-  finally{$('authSubmit').disabled=false;}
+  showVerificationResult(false,'Validando seu link de confirmação…');
+  try{const data=await rawRpc('confirmEmail',token);showVerificationResult(true,data.message)}
+  catch(err){showVerificationResult(false,err.message)}
 }
-
-$('authForm').onsubmit=async e=>{e.preventDefault();$('authError').textContent='';$('authSubmit').disabled=true;try{const email=$('authEmail').value,password=$('authPassword').value;if(registerMode){await rawRpc('registerAccount',$('authName').value,email,password);setAuth(false);$('authPassword').value='';$('authError').style.color='#166534';$('authError').textContent='Cadastro solicitado! Verifique seu e-mail e clique no link de confirmação para ativar a conta.';}else{const data=await rawRpc('loginAccount',email,password);sessionToken=data.token;sessionStorage.setItem('abrigo_session',sessionToken);enterApp(data.user);$('authPassword').value='';}}catch(err){$('authError').style.color='#b91c1c';$('authError').textContent=err.message;}finally{$('authSubmit').disabled=false}};
+$('authForm').onsubmit=async e=>{
+  e.preventDefault();$('authError').textContent='';$('authSubmit').disabled=true;
+  try{
+    const email=$('authEmail').value.trim(),password=$('authPassword').value;
+    if(registerMode){
+      if(password!==$('authPasswordConfirm').value)throw new Error('As senhas não coincidem. Confira e tente novamente.');
+      await rawRpc('registerAccount',$('authName').value,email,password);
+      $('authPassword').value='';$('authPasswordConfirm').value='';
+      showVerificationSent(email,40);
+    }else{
+      const data=await rawRpc('loginAccount',email,password);
+      sessionToken=data.token;sessionStorage.setItem('abrigo_session',sessionToken);
+      enterApp(data.user);$('authPassword').value='';
+    }
+  }catch(err){$('authError').style.color='#b91c1c';$('authError').textContent=err.message}
+  finally{$('authSubmit').disabled=false}
+};
 $('logoutBtn').onclick=async()=>{let token=sessionToken;exitApp();try{await rawRpc('logoutAccount',token)}catch(e){}};
 $('refreshUsers').onclick=loadUsers;
 
