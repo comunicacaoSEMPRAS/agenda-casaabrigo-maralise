@@ -1,10 +1,50 @@
 <!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 :root{font-family:Arial,Helvetica,sans-serif;color:#1e304b;background:#f3f7fc}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{display:flex;min-height:100vh}.side{background:#163f78;color:white;width:245px;padding:28px 15px;flex-shrink:0}.side strong{font-size:19px;line-height:1.35}.side small{display:block;color:#cbdcf3;margin:10px 0 26px}.side button{display:block;width:100%;padding:12px;border:0;border-radius:8px;text-align:left;background:transparent;color:#fff;margin:5px 0}.side button.active,.side button:hover{background:#3470bd}.main{flex:1;padding:25px;min-width:0;max-width:1500px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.eyebrow{color:#3666a1;font-size:12px;text-transform:uppercase;font-weight:bold;letter-spacing:1px}h1{font-size:25px;margin:5px 0 4px}.muted{font-size:12px;color:#62758d}.actions{display:flex;gap:9px;flex-wrap:wrap}button.primary,.secondary,.danger{border:0;border-radius:9px;padding:11px 13px;font-weight:600}.primary{background:#2464a9;color:white}.secondary{background:white;color:#204c81;border:1px solid #d3deeb}.danger{background:#b23b43;color:white}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:20px 0}.card,.panel{background:white;border:1px solid #dee7f1;border-radius:13px;padding:19px;box-shadow:0 3px 13px #0a2a5610}.card b{display:block;font-size:26px;color:#1c5798;margin:8px 0}.card span{font-size:12px;color:#62758d}.panel{margin:19px 0}.panel h2{font-size:17px;margin:0 0 13px}.filters{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:15px}.filters input,.filters select{padding:10px;border:1px solid #cad8e9;border-radius:7px;max-width:100%}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:900px}td,th{padding:11px;text-align:left;border-bottom:1px solid #e7edf5;font-size:12px;vertical-align:top}th{background:#edf4fc;color:#305d8f;font-size:11px;text-transform:uppercase}.pill{background:#e7f0fc;color:#245c9c;border-radius:20px;padding:5px 8px;font-size:11px}.pill.Realizada{background:#e2f5e9;color:#27764a}.pill.Cancelada{background:#ffebea;color:#a23d3d}.link{border:0;background:none;color:#1763af;font-weight:bold;padding:5px}.hide{display:none!important}.days{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.day{background:#f7fbff;border:1px solid #dae6f4;border-radius:9px;padding:12px;min-height:130px}.day b{font-size:12px}.event{background:#e7f0ff;border-left:3px solid #2673bd;font-size:11px;margin:9px 0;padding:9px;border-radius:5px;line-height:1.5}.event strong{display:block}dialog{border:0;border-radius:13px;width:min(720px,96vw);max-height:94vh;padding:0;box-shadow:0 15px 55px #193b6666}dialog::backdrop{background:#10294a99}.dialoghead{background:#edf4ff;padding:18px 22px;display:flex;justify-content:space-between;align-items:center}.dialoghead h2{margin:0}.dialogbody{padding:20px 22px;overflow:auto;max-height:calc(94vh - 68px)}.fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:bold;color:#456284}.field input,.field select,.field textarea{padding:11px;border:1px solid #cad8e9;border-radius:8px;width:100%;background:white}.field textarea{resize:vertical;min-height:75px}.foot{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}.notice{border-left:4px solid #d6a03a;background:#fffae8;padding:12px 15px;font-size:12px;line-height:1.6}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}.photo{border:1px solid #dbe6f3;border-radius:10px;padding:10px}.photo img{width:100%;height:130px;object-fit:cover;border-radius:7px;background:#ecf2fa}.photo button{margin-top:8px}.reportheader{text-align:center;color:#173d75;border-bottom:3px solid #2a6bb2;padding:10px}.reportfooter{font-size:10px;text-align:center;border-top:1px solid #bed0e6;margin-top:20px;padding:10px}#toast{position:fixed;bottom:15px;right:15px;max-width:340px;padding:12px 16px;background:#193d71;color:white;border-radius:9px;display:none;z-index:10;font-size:13px}#toast.error{background:#a72d3d}@media(max-width:950px){.side{width:190px}.cards{grid-template-columns:repeat(2,1fr)}.days{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.shell{display:block}.side{width:100%;padding:12px}.side small{margin:3px 0}.side nav{display:flex;overflow:auto}.side button{white-space:nowrap;width:auto}.main{padding:12px}.days{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.field.full{grid-column:1}.cards{gap:8px}.card{padding:11px}}
+
+/* VISUAL 2026: design de alto contraste, azul, branco, cinza e preto */
+:root{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#142338;background:#f2f5fa}
+body{background:#f3f6fb}button,input,textarea,select{font-family:inherit}button{transition:background .22s ease,transform .22s ease,box-shadow .22s ease}button:not(:disabled):hover{transform:translateY(-1px)}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}button:disabled{opacity:.55;cursor:not-allowed}
+.primary{background:linear-gradient(115deg,#1557a8,#287bdd);box-shadow:0 5px 14px #236bc42b;color:#fff;border:0;border-radius:11px;min-height:43px}
+.primary:not(:disabled):hover{background:linear-gradient(115deg,#124889,#1767bb);box-shadow:0 8px 20px #236bc440}
+.secondary{border:1px solid #cbd8e8;background:#fff;color:#173e71;border-radius:11px;min-height:43px}
+.link{font-size:13px;color:#155eac}
+#authScreen{background:radial-gradient(ellipse at 15% 10%,#d8e9ff 0%,transparent 43%),radial-gradient(ellipse at 92% 90%,#dbe8fc 0%,transparent 42%),linear-gradient(135deg,#f6f9fe,#e8edf5)!important;position:relative;overflow:hidden}
+#authScreen:before{content:"";position:absolute;right:-130px;top:-200px;width:500px;height:500px;border:1px solid #7daadd33;border-radius:50%;box-shadow:0 0 0 60px #7daadd13,0 0 0 130px #7daadd0b;pointer-events:none}
+#authScreen>div{position:relative;z-index:1;max-width:460px!important;padding:38px!important;border-radius:24px!important;border:1px solid #ffffffaa;box-shadow:0 24px 80px #152f5b21,0 8px 25px #142e5612!important;animation:authEnter .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes authEnter{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+.auth-brand{display:flex;gap:12px;align-items:center;margin-bottom:24px;color:#244e86;font-weight:800;letter-spacing:1.15px;font-size:10px}
+.auth-brand small{display:block;color:#8393aa;font-size:9px;letter-spacing:1.4px;margin-top:4px}
+.brand-logo{display:grid;place-items:center;width:42px;height:42px;color:white;font-size:23px;background:linear-gradient(150deg,#174a8c,#3183df);border-radius:13px;box-shadow:0 8px 18px #0c519133}
+.auth-heading{font-size:27px;line-height:1.16;letter-spacing:-.9px;margin:0 0 22px!important;color:#101b2c!important}
+.auth-heading span{display:block;color:#1764bb}
+#authTitle{color:#64748b;margin:0 0 21px;font-size:14px}
+#authForm,.auth-stack{display:grid;gap:12px}
+#authScreen input{width:100%;background:#f9fbff;border:1px solid #d7e1ef;border-radius:11px;padding:13px 14px;min-height:45px;color:#16243a;transition:border-color .22s,box-shadow .22s}
+#authScreen input:focus{outline:0;border-color:#4389d7;box-shadow:0 0 0 4px #3f8ae018}
+#authScreen input::placeholder{color:#8c9bad}
+#authScreen #authSubmit{padding:13px}
+#authScreen #authToggle{margin-top:12px!important;width:100%;padding:11px}
+.auth-forgot{display:block;margin:13px 0 0 auto;font-weight:650;text-align:right}
+.auth-icon{display:grid;place-items:center;font-size:25px;width:53px;height:53px;border-radius:16px;background:#e5f0ff;color:#165fae;margin:5px 0 20px}
+.auth-subview h3,#verificationView h3{font-size:21px;color:#182b44!important;letter-spacing:-.5px;margin:5px 0 14px}
+.auth-description{font-size:13px;color:#5e718b;line-height:1.65}
+.auth-stack label{font-size:12px;font-weight:700;color:#395472;margin-bottom:-5px}
+.auth-back{display:block;margin:15px auto 0}.form-message{color:#b63449;font-size:12px;line-height:1.5;min-height:18px}
+#resetResendBtn{width:100%;margin-top:10px;padding:12px}
+#authScreen>div>p:last-child{border-top:1px solid #e9eef5;padding-top:17px;line-height:1.55}
+.side{background:linear-gradient(165deg,#0c1e37,#16477d 95%);box-shadow:7px 0 32px #122e4a10}
+.side button{border-radius:10px;transition:background .2s}.side button.active,.side button:hover{background:#ffffff22}
+.main{padding:32px clamp(16px,3vw,46px)}.top h1{font-size:29px;letter-spacing:-.8px}.eyebrow{letter-spacing:1.3px}
+.card,.panel{border-radius:18px;border-color:#e2e9f3;box-shadow:0 7px 24px #16314b09}.card b{color:#145eb3}
+.day{border-radius:12px}.event{border-radius:9px}dialog{border-radius:20px}.dialoghead{background:#edf5ff}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media(max-width:600px){#authScreen>div{padding:24px!important}.auth-heading{font-size:24px}.main{padding:15px}}
 </style></head><body>
 <div id="authScreen" style="min-height:100vh;display:grid;place-items:center;padding:20px;background:#eaf1fb">
   <div style="background:white;padding:28px;border-radius:16px;width:100%;max-width:410px;box-shadow:0 12px 35px #193c7430">
-    <h2 style="color:#163f78">Agenda Casa Abrigo Maralise</h2>
+    <div class="auth-brand"><span class="brand-logo">✦</span><span>SISTEMA DE AGENDAMENTOS <small>ACESSO COMPARTILHADO</small></span></div>
+    <h2 class="auth-heading">Agenda Casa Abrigo <span>Maralise</span></h2>
     <div id="authFormView">
       <p id="authTitle">Entrar na agenda compartilhada</p>
       <form id="authForm" style="display:grid;gap:12px">
@@ -15,6 +55,7 @@
         <button class="primary" id="authSubmit" type="submit">Entrar</button>
       </form>
       <button id="authToggle" class="secondary" style="margin-top:12px;width:100%">Criar minha conta</button>
+      <button id="forgotLink" type="button" class="link auth-forgot">Esqueci minha senha</button>
       <p id="authError" role="status" aria-live="polite" style="color:#b91c1c;font-size:13px"></p>
     </div>
     <div id="verificationView" class="hide">
@@ -25,6 +66,41 @@
       <button id="resendBtn" type="button" class="secondary" style="width:100%;margin-top:8px" disabled>Reenviar e-mail (40s)</button>
       <p id="verificationStatus" role="status" aria-live="polite" style="font-size:13px;color:#20517f"></p>
       <button id="backToLogin" type="button" class="link" style="margin-top:10px">Voltar para entrar</button>
+    </div>
+    <div id="forgotView" class="hide auth-subview">
+      <div class="auth-icon" aria-hidden="true">↗</div>
+      <h3>Recuperar senha</h3>
+      <p class="auth-description">Digite o e-mail usado no cadastro para receber um link de redefinição.</p>
+      <form id="forgotForm" class="auth-stack">
+        <label for="forgotEmail">E-mail cadastrado</label>
+        <input id="forgotEmail" type="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+        <button class="primary" id="forgotSubmit" type="submit">Enviar link de recuperação</button>
+      </form>
+      <p id="forgotError" role="status" aria-live="polite" class="form-message"></p>
+      <button type="button" id="forgotBack" class="link auth-back">Voltar para entrar</button>
+    </div>
+    <div id="resetSentView" class="hide auth-subview">
+      <div class="auth-icon" aria-hidden="true">✉</div>
+      <h3>Confira seu e-mail</h3>
+      <p class="auth-description">Enviamos um link de redefinição para <strong id="resetSentEmail"></strong>.</p>
+      <p class="auth-description">Confira sua caixa de entrada e a pasta de spam. O link é válido por <strong>30 minutos</strong>.</p>
+      <button type="button" id="resetResendBtn" class="secondary" disabled>Reenviar e-mail (59s)</button>
+      <p id="resetSentStatus" role="status" aria-live="polite" class="form-message"></p>
+      <button type="button" id="resetSentBack" class="link auth-back">Voltar para entrar</button>
+    </div>
+    <div id="resetPasswordView" class="hide auth-subview">
+      <div class="auth-icon" aria-hidden="true">🔒</div>
+      <h3>Crie uma nova senha</h3>
+      <p class="auth-description">Escolha uma senha segura com pelo menos 12 caracteres.</p>
+      <form id="resetPasswordForm" class="auth-stack">
+        <label for="newPassword">Nova senha</label>
+        <input id="newPassword" type="password" autocomplete="new-password" minlength="12" maxlength="128" required placeholder="Nova senha">
+        <label for="newPasswordConfirm">Confirme a nova senha</label>
+        <input id="newPasswordConfirm" type="password" autocomplete="new-password" minlength="12" maxlength="128" required placeholder="Repita a senha">
+        <button type="submit" id="resetPasswordSubmit" class="primary">Salvar nova senha</button>
+      </form>
+      <p id="resetPasswordStatus" role="status" aria-live="polite" class="form-message"></p>
+      <button type="button" id="resetPasswordBack" class="link auth-back">Voltar para entrar</button>
     </div>
     <p style="font-size:11px;color:#64748b;margin-top:18px">Somente informações administrativas não sigilosas devem ser cadastradas.</p>
   </div>
@@ -91,16 +167,74 @@ function rawRpc(name,...args){
   });
 }
 function rpc(name,...args){if(!sessionToken)throw Error('Faça login.');return rawRpc(name,sessionToken,...args)}
+const AUTH_PANES_=['authFormView','verificationView','forgotView','resetSentView','resetPasswordView'];
+function showAuthPane_(id){AUTH_PANES_.forEach(key=>$(key).classList.toggle('hide',key!==id));}
+let resetAddress='',resetCountdownId=null,resetCooldownEnd=0,activeResetToken='';
+function stopResetCounter_(){if(resetCountdownId!==null){clearInterval(resetCountdownId);resetCountdownId=null;}}
+function startResetCounter_(secs=59){
+  stopResetCounter_();resetCooldownEnd=Date.now()+secs*1000;
+  const refresh=()=>{const remain=Math.max(0,Math.ceil((resetCooldownEnd-Date.now())/1000));
+    $('resetResendBtn').disabled=remain>0;
+    $('resetResendBtn').textContent=remain?'Reenviar e-mail ('+remain+'s)':'Reenviar e-mail de recuperação';
+    if(!remain)stopResetCounter_();};
+  refresh();if(resetCooldownEnd>Date.now())resetCountdownId=setInterval(refresh,250);
+}
+function showResetSent_(address,seconds=59){
+  resetAddress=address.toLowerCase().trim();$('resetSentEmail').textContent=resetAddress;
+  $('resetSentStatus').textContent='';showAuthPane_('resetSentView');startResetCounter_(seconds);
+}
+function showForgot_(){showAuthPane_('forgotView');$('forgotEmail').value=$('authEmail').value; $('forgotError').textContent='';}
+function authBack_(){stopResetCounter_();activeResetToken='';setAuth(false);}
+$('forgotLink').onclick=showForgot_;
+$('forgotBack').onclick=authBack_;
+$('resetSentBack').onclick=authBack_;
+$('resetPasswordBack').onclick=authBack_;
+$('forgotForm').onsubmit=async event=>{
+  event.preventDefault();const btn=$('forgotSubmit'),email=$('forgotEmail').value.trim();
+  btn.disabled=true;$('forgotError').textContent='Enviando solicitação…';
+  try{const result=await rawRpc('requestPasswordReset',email);
+    if(!result.registered){$('forgotError').textContent='Este e-mail não foi cadastrado em uma conta ativa.';return;}
+    showResetSent_(email,result.cooldown||59);
+    if(result.cooldown<59)$('resetSentStatus').textContent=result.message;
+  }catch(err){$('forgotError').textContent=err.message;}
+  finally{btn.disabled=false;}
+};
+$('resetResendBtn').onclick=async()=>{
+  if($('resetResendBtn').disabled||!resetAddress)return;
+  startResetCounter_(59);$('resetSentStatus').textContent='Solicitando novo link…';
+  try{const result=await rawRpc('requestPasswordReset',resetAddress);
+    $('resetSentStatus').textContent=result.message;
+    if(result.cooldown)startResetCounter_(result.cooldown);
+  }catch(err){$('resetSentStatus').textContent=err.message;}
+};
+$('resetPasswordForm').onsubmit=async event=>{
+  event.preventDefault();const btn=$('resetPasswordSubmit'),a=$('newPassword').value,b=$('newPasswordConfirm').value;
+  $('resetPasswordStatus').textContent='';
+  if(a!==b){$('resetPasswordStatus').textContent='As senhas não coincidem.';return;}
+  if(a.length<12||a.length>128){$('resetPasswordStatus').textContent='Use uma senha de 12 a 128 caracteres.';return;}
+  btn.disabled=true;
+  try{const result=await rawRpc('resetPassword',activeResetToken,a);
+    activeResetToken='';$('newPassword').value='';$('newPasswordConfirm').value='';
+    setAuth(false);$('authError').style.color='#17643a';$('authError').textContent=result.message;
+  }catch(err){$('resetPasswordStatus').textContent=err.message;}
+  finally{btn.disabled=false;}
+};
+function processPasswordReset_(){
+  const token=new URLSearchParams(location.search).get('reset');if(!token)return false;
+  try{history.replaceState({},'',location.pathname+location.hash);}catch(_){}
+  exitApp();sessionToken='';activeResetToken=token;showAuthPane_('resetPasswordView');
+  return true;
+}
 function setAuth(mode){
   registerMode=mode;
-  $('authFormView').classList.remove('hide');$('verificationView').classList.add('hide');
+  showAuthPane_('authFormView');
   $('authTitle').textContent=mode?'Criar conta na agenda':'Entrar na agenda compartilhada';
   $('authName').classList.toggle('hide',!mode);$('authName').required=mode;
   $('authPasswordConfirm').classList.toggle('hide',!mode);$('authPasswordConfirm').required=mode;
   $('authPassword').autocomplete=mode?'new-password':'current-password';
   $('authSubmit').textContent=mode?'Cadastrar':'Entrar';
   $('authToggle').textContent=mode?'Já tenho conta — Entrar':'Criar minha conta';
-  $('authError').textContent='';
+  $('authError').textContent='';$('authError').style.color='#b91c1c';$('forgotLink').classList.toggle('hide',mode);
 }
 function stopResendCountdown(){if(resendTimer!==null){clearInterval(resendTimer);resendTimer=null;}}
 function startResendCountdown(seconds=40){
@@ -115,7 +249,7 @@ function startResendCountdown(seconds=40){
 }
 function showVerificationSent(email,waitSeconds=40,description=''){
   verificationEmail=String(email||'').trim().toLowerCase();
-  $('authFormView').classList.add('hide');$('verificationView').classList.remove('hide');
+  showAuthPane_('verificationView');
   $('verificationTitle').textContent='Verifique sua caixa de entrada';
   $('verificationIcon').textContent='✉';
   $('verificationDescription').textContent='';
@@ -129,7 +263,7 @@ function showVerificationSent(email,waitSeconds=40,description=''){
 }
 function showVerificationResult(success,message){
   stopResendCountdown();
-  $('authFormView').classList.add('hide');$('verificationView').classList.remove('hide');
+  showAuthPane_('verificationView');
   $('verificationTitle').textContent=success?'E-mail confirmado!':'Não foi possível confirmar';
   $('verificationIcon').textContent=success?'✓':'!';
   $('verificationDescription').textContent=message;
@@ -201,7 +335,7 @@ function exportCSV(){let lines=[['CASA ABRIGO ROTATIVA MARALISE FARIAS PINTO PAC
 function printReport(){let rows=sorted(reportRows()),title=$('reportType').value==='Todos'?'VISITAS E ATIVIDADES EXTERNAS':$('reportType').value.toUpperCase();let body='<table><thead><tr><th>Data</th><th>Tipo</th><th>Horário</th><th>Visitante/Instituição</th><th>Finalidade</th><th>Responsável</th><th>Situação</th><th>Realizada</th><th>Acompanhantes</th></tr></thead><tbody>'+rows.map(r=>'<tr><td>'+fmt(r.data)+'</td><td>'+esc(r.tipo)+'</td><td>'+esc(r.inicio)+'–'+esc(r.fim)+'</td><td>'+esc(r.visitante)+'</td><td>'+esc(r.finalidade)+'</td><td>'+esc(r.responsavel)+'</td><td>'+esc(r.situacao)+'</td><td>'+esc(r.realizada)+'</td><td>'+esc(r.tipo==='Visita'?r.acompanhado+' '+(r.quantidadeAcompanhantes||''):'—')+'</td></tr>').join('')+'</tbody></table>';let html='<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Relatório mensal</title><style>@page{size:A4 landscape;margin:15mm}body{font:11px Arial;color:#233852}.head{text-align:center;padding:10px;border-bottom:3px solid #2364aa}.head b{display:block;font-size:17px;color:#174675}.head small{font-size:12px}h2{text-align:center;font-size:15px;margin:22px 0}table{width:100%;border-collapse:collapse}td,th{border:1px solid #cbd7e6;padding:6px;text-align:left;word-break:break-word}th{background:#e9f1fb}footer{border-top:1px solid #98b5d8;padding-top:9px;text-align:center;margin-top:25px;font-size:10px}@media print{thead{display:table-header-group}tr{break-inside:avoid}}</style></head><body><div class="head"><small>Centro de Referência de Assistência Social</small><b>CASA ABRIGO ROTATIVA</b><b>MARALISE FARIAS PINTO PACHECO</b></div><h2>RELATÓRIO MENSAL — '+esc(title)+' — '+esc($('reportMonth').value)+'</h2><p>Total de registros: '+rows.length+'</p>'+body+'<footer>Casa Abrigo Rotativa MARALISE FARIAS PINTO PACHECO | Rondonópolis-MT</footer></body></html>';let w=window.open('','_blank');if(!w){notice('Permita janelas pop-up para imprimir.',true);return}w.document.open();w.document.write(html);w.document.close();w.focus();setTimeout(()=>w.print(),500)}
 week=monday(today());$('reportMonth').value=today().slice(0,7);document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>show(b.dataset.view));$('refresh').onclick=()=>reload();$('newBtn').onclick=()=>edit();$('newExternal').onclick=()=>edit(null,'Atividade externa');$('closeEditor').onclick=$('cancel').onclick=()=>$('editor').close();$('form').onsubmit=submit;$('kind').onchange=kindChange;$('acompanhado').onchange=kindChange;['search','filterRealizada','filterAcompanhado','reportMonth','reportType'].forEach(id=>$(id).oninput=render);$('prevWeek').onclick=()=>{week=plus(week,-7);render()};$('nextWeek').onclick=()=>{week=plus(week,7);render()};$('todayWeek').onclick=()=>{week=monday(today());render()};$('weekDate').onchange=()=>{if($('weekDate').value)week=monday($('weekDate').value);render()};$('csvBtn').onclick=exportCSV;$('printBtn').onclick=printReport;$('closePhotos').onclick=()=>$('photosDialog').close();$('uploadBtn').onclick=upload;
 document.addEventListener('click',async e=>{let b=e.target.closest('[data-edit],[data-delete],[data-photos],[data-removephoto],[data-setstatus]');if(!b)return;if(b.dataset.setstatus){if(!confirm('Confirmar alteração de acesso desta conta?'))return;try{await rpc('adminSetUserStatus',b.dataset.userid,b.dataset.setstatus);await loadUsers();notice('Situação da conta atualizada.')}catch(err){notice(err.message,true)}return;}if(b.dataset.edit){let r=records.find(x=>x.id===b.dataset.edit);if(r)edit(r)}if(b.dataset.photos){activePhotoRecord=b.dataset.photos;$('photosDialog').showModal();gallery()}if(b.dataset.delete){let r=records.find(x=>x.id===b.dataset.delete);if(!r||!canEditRecord(r)){notice('Este agendamento está disponível somente para visualização.',true);return;}if(!confirm('Excluir este registro da agenda compartilhada?'))return;try{await rpc('deleteRecord',b.dataset.delete);await reload(true);notice('Registro excluído.')}catch(e){notice(e.message,true)}}if(b.dataset.removephoto){let p=photos.find(x=>x.id===b.dataset.removephoto);let r=p&&records.find(x=>x.id===p.registroId);if(!r||!canEditRecord(r)){notice('Você não pode excluir esta foto.',true);return;}if(!confirm('Excluir a foto do Drive?'))return;try{await rpc('deletePhoto',b.dataset.removephoto);await reload(true);gallery();notice('Foto excluída.')}catch(e){notice(e.message,true)}}});
-if(new URLSearchParams(location.search).has('confirm')){processEmailConfirmation()}else if(sessionToken){rawRpc('sessionInfo',sessionToken).then(enterApp).catch(exitApp)}
+if(new URLSearchParams(location.search).has('reset')){processPasswordReset_()}else if(new URLSearchParams(location.search).has('confirm')){processEmailConfirmation()}else if(sessionToken){rawRpc('sessionInfo',sessionToken).then(enterApp).catch(exitApp)}
 setInterval(()=>{if(activeUser&&!$('editor').open&&!$('photosDialog').open&&!document.hidden)reload(true)},60000);
 })();
 </script></body></html>
